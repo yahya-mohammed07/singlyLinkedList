@@ -10,7 +10,7 @@ node::node()
 // add values
 void node::push_back (int value)
 {
-    node *temp = new node;
+    std::shared_ptr<node> temp = std::make_shared<node>();
     temp->data = value;
     temp->next = nullptr;
     //
@@ -28,22 +28,20 @@ void node::push_back (int value)
 // gives the value of the last element
 int node::back()
 {
-    node *last  = new node;
+    std::shared_ptr<node> last = std::make_shared<node>();
     last = tail;
     return last->data;
-
-    delete last;
 }
 // add value at the beginning
 void node::pushHead (int value)
 {
-    node *temp = new node;
+    std::shared_ptr<node> temp = std::make_shared<node>();
     temp->data = value;
     temp->next = head;
 
     head = temp;
 }
-//
+// add to specific index
 void node::insert_at (int pos, int value)
 {
 
@@ -51,19 +49,9 @@ void node::insert_at (int pos, int value)
 //
 void node::printNodes()
 {
-    for (node *it = head; it != nullptr; it = it->next)
+    for (std::shared_ptr<node> it = head; it != nullptr; it = it->next)
     {
         std::cout << it->data << " ";
     }
     std::cout << '\n';
-}
-//
-node::~node()
-{
-    node *free = head;
-    while (free != nullptr)
-    {
-        delete free;
-        free = free->next;
-    }
 }

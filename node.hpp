@@ -2,17 +2,18 @@
 #define __NODE_H__
 
 #include <iostream>
+#include <memory>
 
 // linkedList of integers
 class node
 {
 private:
     // first element in the list
-    node *head;
-    // lastest element in the list
-    node *tail;
+    std::shared_ptr<node> head;
+    // last element in the list
+    std::shared_ptr<node> tail;
     // has the refrence of the next element
-    node *next;
+    std::shared_ptr<node> next;
     //
     int data;
 public:
@@ -24,8 +25,6 @@ public:
     auto pushHead (int value) -> void;
     auto insert_at (int pos, int value) -> void;
     auto printNodes () -> void;
-    // destructor
-    ~node();
 };
 
 #endif // __NODE_H__
