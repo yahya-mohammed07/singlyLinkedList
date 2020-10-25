@@ -14,15 +14,18 @@ auto main() -> int
         std::cin >> input;
         n.push_back(input);
     }*/
-    // printing nodes
     list.push_back(3);
     list.push_back(43);
     list.push_back(455);
     //
-    list.pushHead(77);
+    list.push_front(77);
     //
     std::cout << list.back() << '\n';
-    list.printNodes();
+    std::cout << list.front() << '\n';
+    //
+    list.insert_at(3, 1000);
+    list.print();
+    std::cout << list.size() << '\n';
     /*
     std::cout << "wanna run again?(y) or (n): ";
     char choise = '\0';
