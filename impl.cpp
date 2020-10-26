@@ -10,7 +10,7 @@ node::node()
     data = -1;
 }
 // add values
-void node::push_back (const int &value)
+auto node::push_back (const int &value) ->void
 {
     std::shared_ptr<node> temp = std::make_shared<node>();
     temp->data = value;
@@ -29,26 +29,26 @@ void node::push_back (const int &value)
     SIZE++;
 }
 // return const size
-const unsigned long long node::size ()
+auto node::size ()  ->const unsigned long long
 {
     return SIZE;
 }
 // return last value
-int node::back ()
+auto node::back () ->int
 {
     std::shared_ptr<node> last = std::make_shared<node>();
     last = tail;
     return last->data;
 }
 // return first value
-int node::front ()
+auto node::front () ->int
 {
     std::shared_ptr<node> first = std::make_shared<node>();
     first = head;
     return first->data;
 }
 // add value at the beginning
-void node::push_front (const int &value)
+auto node::push_front (const int &value) ->void
 {
     std::shared_ptr<node> temp = std::make_shared<node>();
     temp->data = value;
@@ -58,7 +58,7 @@ void node::push_front (const int &value)
     SIZE++;
 }
 // add to specific index
-void node::insert_at (const int& pos, const int& value)
+auto node::insert_at (const int& pos, const int& value) ->void
 {
     std::shared_ptr<node> prev = std::make_shared<node>();
     std::shared_ptr<node> curr = std::make_shared<node>();
@@ -77,7 +77,7 @@ void node::insert_at (const int& pos, const int& value)
     SIZE++;
 }
 //
-void node::print ()
+auto node::print () ->void
 {
     for (std::shared_ptr<node> it = head; it != nullptr; it = it->next)
     {
