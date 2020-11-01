@@ -113,7 +113,13 @@ auto node::pop_back () ->void
         std::cout << "\n--failed to delete! the list is empty--" << '\n';
     }
 }
-//
+// checks if the list is empty
+auto node::empty() ->const bool
+{
+    if (SIZE == 0) return true;
+    else return false;
+}
+// prints list
 auto node::print () ->void
 {
     if (head != nullptr)

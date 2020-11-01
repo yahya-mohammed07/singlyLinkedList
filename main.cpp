@@ -17,7 +17,8 @@ auto main() -> int
         "8- delete last element\n"
         "9- delete fist element\n"
         "10- print list\n"
-        "11- quit\n";
+        "11- cehck if the list is empty\n"
+        "12- quit\n";
         //
         std::cout << "\n\nmy choise: ";
         int choise = 0;
@@ -139,12 +140,25 @@ auto main() -> int
             }
             case 11:
             {
-                std::cout << "quited !\n";
+                if (!list.empty())
+                {
+                    std::cout << "--list is not empty\n";
+                }
+                else
+                {
+                    std::cout << "--list is empty\n";   
+                }
+                //
+                break;
+            }
+            case 12:
+            {
+                std::cout << "-quited-\n";
                 std::exit(0);
             }
             default:
             {
-                std::cout << "wrong choise try again!\n\n";
+                std::cout << "-wrong choise try again->\n\n";
                 break;
             }
         }

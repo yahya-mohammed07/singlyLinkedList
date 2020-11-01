@@ -28,5 +28,6 @@ public:
     auto size ()->const unsigned long long;
     auto pop_front () ->void;
     auto pop_back () ->void;
+    auto empty() ->const bool;
 };
 #endif // __NODE_H__
