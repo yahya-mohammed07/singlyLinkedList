@@ -1,6 +1,7 @@
 #ifndef __NODE_H__
 #define __NODE_H__
-
+//
+#include <cstdint>
 #include <iostream>
 #include <memory>
 // linkedList of integers
@@ -14,7 +15,7 @@ private:
     // has the refrence of the next element
     std::shared_ptr<node> next;
     //
-    int data;
+    std::uint64_t data;
 public:
     // constructor
     node ();
@@ -25,7 +26,7 @@ public:
     auto push_front (const int &value) ->void;
     auto insert_at (const int &pos, const int& value) ->void;
     auto print ()->void;
-    auto size ()->const unsigned long long;
+    auto size ()->const std::uint64_t;
     auto pop_front () ->void;
     auto pop_back () ->void;
     auto empty() ->const bool;

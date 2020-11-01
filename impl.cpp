@@ -1,6 +1,6 @@
 #include "node.hpp"
 //
-static unsigned long long SIZE = 0;
+static std::uint64_t SIZE = 0;
 //
 node::node()
 {
@@ -30,7 +30,7 @@ auto node::push_back (const int &value) ->void
     SIZE++;
 }
 // return const size
-auto node::size ()  ->const unsigned long long
+auto node::size ()  ->const std::uint64_t
 {
     return SIZE;
 }
@@ -60,20 +60,27 @@ auto node::push_front (const int &value) ->void
 // add to specific index
 auto node::insert_at (const int &pos, const int& value) ->void
 {
-    std::shared_ptr<node> prev = std::make_shared<node>();
-    std::shared_ptr<node> curr = head;
-    std::shared_ptr<node> temp = std::make_shared<node>();
-    //
-    for (int i = 0; i < pos; i++)
+    if (head != nullptr)
     {
-        prev = curr;
-        curr = curr->next;
+        std::shared_ptr<node> prev = std::make_shared<node>();
+        std::shared_ptr<node> curr = head;
+        std::shared_ptr<node> temp = std::make_shared<node>();
+        //
+        for (int i = 0; i < pos; i++)
+        {
+            prev = curr;
+            curr = curr->next;
+        }
+        temp->data = value;
+        prev->next = temp;
+        temp->next = curr;
+        //
+        SIZE++;
     }
-    temp->data = value;
-    prev->next  = temp;
-    temp->next = curr;
-    //
-    SIZE++;
+    else
+    {
+        std::cout << "\n-list is empty or pos is empty-\n";
+    }
 }
 //  delete element head
 auto node::pop_front() ->void
