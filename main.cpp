@@ -110,7 +110,7 @@ auto main() -> int
             case 8:
             {
                 std::cout << "deleting last element...\n";
-                list.pop_back() ;
+                list.pop_back();
                 //
                 std::cout << "\nthe list: ";
                 list.print();
