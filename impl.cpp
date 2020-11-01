@@ -1,4 +1,5 @@
 #include "node.hpp"
+#include <memory>
 
 static unsigned long long SIZE = 0;
 
@@ -58,7 +59,7 @@ auto node::push_front (const int &value) ->void
     SIZE++;
 }
 // add to specific index
-auto node::insert_at (const int& pos, const int& value) ->void
+auto node::insert_at (int &&pos, const int& value) ->void
 {
     std::shared_ptr<node> prev = std::make_shared<node>();
     std::shared_ptr<node> curr = std::make_shared<node>();
@@ -76,6 +77,43 @@ auto node::insert_at (const int& pos, const int& value) ->void
 
     SIZE++;
 }
+//  delete element head
+auto node::pop_front() ->void
+{
+    if (head != nullptr)
+    {
+        std::shared_ptr<node> temp = std::make_shared<node>();
+        temp = head;
+        head = temp->next;
+
+        temp.reset();
+    }
+    else if (head == nullptr)
+    {
+        std::cout << "falied to delete!" << '\n';
+    }
+    SIZE--;
+}
+// delete element tail
+auto node::pop_back () ->void
+{
+    if (head != nullptr)
+    {
+        std::shared_ptr<node> cur = head;
+        while (cur->next !=  nullptr)
+        {
+            tail = cur;
+            cur = cur->next;
+        }
+        tail->next = nullptr;
+    }
+    else if (head == nullptr)
+    {
+        std::cout << "failed to delete! the list is empty" << '\n';
+    }
+    SIZE--;
+}
+
 //
 auto node::print () ->void
 {

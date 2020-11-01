@@ -24,8 +24,13 @@ auto main() -> int
     std::cout << list.front() << '\n';
     //
     list.insert_at(3, 1000);
+
+    list.pop_front();
+    list.pop_back();
+
     list.print();
     std::cout << list.size() << '\n';
+    std::cout << list.back() << '\n';
     /*
     std::cout << "wanna run again?(y) or (n): ";
     char choise = '\0';
