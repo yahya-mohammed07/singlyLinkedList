@@ -1,5 +1,4 @@
 #include "node.hpp"
-#include <memory>
 
 static unsigned long long SIZE = 0;
 //
