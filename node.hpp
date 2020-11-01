@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <memory>
-
 // linkedList of integers
 class node
 {
@@ -20,15 +19,14 @@ public:
     // constructor
     node ();
     // methods
-    auto push_back (const int &value) -> void;
-    auto back () -> int;
-    auto front () -> int;
-    auto push_front (const int &value) -> void;
-    auto insert_at (const int &pos, const int& value) -> void;
-    auto print () -> void;
-    auto size () -> const unsigned long long;
+    auto push_back (const int &value) ->void;
+    auto back () ->int;
+    auto front () ->int;
+    auto push_front (const int &value) ->void;
+    auto insert_at (const int &pos, const int& value) ->void;
+    auto print ()->void;
+    auto size ()->const unsigned long long;
     auto pop_front () ->void;
     auto pop_back () ->void;
 };
-
 #endif // __NODE_H__

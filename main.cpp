@@ -89,14 +89,14 @@ auto main() -> int
             case 5:
             {
                 std::cout << "lastest element: ";
-                list.back();
+                std::cout << list.back() << '\n';
                 //
                 break;
             }
             case 6:
             {
                 std::cout << "fist element: ";
-                list.front();
+                std::cout << list.front() << '\n';
                 //
                 break;
             }

@@ -1,5 +1,5 @@
 #include "node.hpp"
-
+//
 static unsigned long long SIZE = 0;
 //
 node::node()
@@ -26,6 +26,7 @@ auto node::push_back (const int &value) ->void
         tail->next = temp;
         tail = temp;
     }
+    //
     SIZE++;
 }
 // return const size
@@ -36,15 +37,13 @@ auto node::size ()  ->const unsigned long long
 // return last value
 auto node::back () ->int
 {
-    std::shared_ptr<node> last = std::make_shared<node>();
-    last = tail;
+    std::shared_ptr<node> last = tail;
     return last->data;
 }
 // return first value
 auto node::front () ->int
 {
-    std::shared_ptr<node> first = std::make_shared<node>();
-    first = head;
+    std::shared_ptr<node> first = head;
     return first->data;
 }
 // add value at the beginning
@@ -55,6 +54,7 @@ auto node::push_front (const int &value) ->void
     temp->next = head;
 
     head = temp;
+    //
     SIZE++;
 }
 // add to specific index
@@ -72,7 +72,7 @@ auto node::insert_at (const int &pos, const int& value) ->void
     temp->data = value;
     prev->next  = temp;
     temp->next = curr;
-
+    //
     SIZE++;
 }
 //  delete element head
@@ -85,6 +85,7 @@ auto node::pop_front() ->void
         head = temp->next;
 
         temp.reset();
+        //
         SIZE--;
     }
     else if (head == nullptr)
@@ -104,6 +105,7 @@ auto node::pop_back () ->void
             cur = cur->next;
         }
         tail->next = nullptr;
+        //
         SIZE--;
     }
     else if (head == nullptr)
@@ -114,9 +116,17 @@ auto node::pop_back () ->void
 //
 auto node::print () ->void
 {
-    for (std::shared_ptr<node> it = head; it != nullptr; it = it->next)
+    if (head != nullptr)
     {
-        std::cout << it->data << " ";
+        for (std::shared_ptr<node> it = head; it != nullptr; it = it->next)
+        {
+            std::cout << it->data << " ";
+        }
+        std::cout << '\n';
     }
-    std::cout << '\n';
+    else
+    {
+        std::cout << " list is empty!\n";
+    }
+
 }
