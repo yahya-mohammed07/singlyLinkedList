@@ -6,13 +6,11 @@ list::list()
 {
     head = nullptr;
     tail = nullptr;
-    next = nullptr;
-    data = -1;
 }
 // add values
 auto list::push_back (const int &value) ->void
 {
-    std::shared_ptr<node> temp = std::make_shared<node>();
+    std::shared_ptr<_Node> temp = std::make_shared<_Node>();
     temp->data = value;
     temp->next = nullptr;
     //
@@ -37,19 +35,19 @@ auto list::size ()  ->const std::uint64_t
 // return last value
 auto list::back () ->int
 {
-    std::shared_ptr<node> last = tail;
+    std::shared_ptr<_Node> last = tail;
     return last->data;
 }
 // return first value
 auto list::front () ->int
 {
-    std::shared_ptr<node> first = head;
+    std::shared_ptr<_Node> first = head;
     return first->data;
 }
 // add value at the beginning
 auto list::push_front (const int &value) ->void
 {
-    std::shared_ptr<node> temp = std::make_shared<node>();
+    std::shared_ptr<_Node> temp = std::make_shared<_Node>();
     temp->data = value;
     temp->next = head;
 
@@ -62,9 +60,9 @@ auto list::insert_at (const int &pos, const int& value) ->void
 {
     if (head != nullptr)
     {
-        std::shared_ptr<node> prev = std::make_shared<node>();
-        std::shared_ptr<node> curr = head;
-        std::shared_ptr<node> temp = std::make_shared<node>();
+        std::shared_ptr<_Node> prev = std::make_shared<_Node>();
+        std::shared_ptr<_Node> curr = head;
+        std::shared_ptr<_Node> temp = std::make_shared<_Node>();
         //
         for (int i = 0; i < pos; i++)
         {
@@ -87,7 +85,7 @@ auto list::pop_front() ->void
 {
     if (head != nullptr)
     {
-        std::shared_ptr<node> temp = head;
+        std::shared_ptr<_Node> temp = head;
         head = temp->next;
 
         temp.reset();
@@ -104,7 +102,7 @@ auto list::pop_back () ->void
 {
     if (head != nullptr)
     {
-        std::shared_ptr<node> cur = head;
+        std::shared_ptr<_Node> cur = head;
         while (cur->next !=  nullptr)
         {
             tail = cur;
@@ -130,7 +128,7 @@ auto list::print () ->void
 {
     if (head != nullptr)
     {
-        std::shared_ptr<node> it;
+        std::shared_ptr<_Node> it;
         for (it = head; it != nullptr; it = it->next)
         {
             std::cout << it->data << " ";

@@ -4,21 +4,22 @@
 #include <cstdint>
 #include <iostream>
 #include <memory>
-//
-struct node
+// type node
+class _Node
 {
-    std::uint64_t data;
+public:
+    std::uint64_t data = 0;
     // has the refrence of the next element
-    std::shared_ptr<node> next;
+    std::shared_ptr<_Node> next = nullptr;
 };
 // linkedList of integers
-class list : node
+class list
 {
 private:
     // first element in the list
-    std::shared_ptr<node> head;
+    std::shared_ptr<_Node> head;
     // last element in the list
-    std::shared_ptr<node> tail;
+    std::shared_ptr<_Node> tail;
     //
 public:
     // constructor
