@@ -2,7 +2,7 @@
 
 auto main() -> int
 {
-    node list;
+    list list;
     //
     while (true)
     {

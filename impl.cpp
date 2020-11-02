@@ -2,7 +2,7 @@
 //
 static std::uint64_t SIZE = 0;
 //
-node::node()
+list::list()
 {
     head = nullptr;
     tail = nullptr;
@@ -10,7 +10,7 @@ node::node()
     data = -1;
 }
 // add values
-auto node::push_back (const int &value) ->void
+auto list::push_back (const int &value) ->void
 {
     std::shared_ptr<node> temp = std::make_shared<node>();
     temp->data = value;
@@ -30,24 +30,24 @@ auto node::push_back (const int &value) ->void
     SIZE++;
 }
 // return const size
-auto node::size ()  ->const std::uint64_t
+auto list::size ()  ->const std::uint64_t
 {
     return SIZE;
 }
 // return last value
-auto node::back () ->int
+auto list::back () ->int
 {
     std::shared_ptr<node> last = tail;
     return last->data;
 }
 // return first value
-auto node::front () ->int
+auto list::front () ->int
 {
     std::shared_ptr<node> first = head;
     return first->data;
 }
 // add value at the beginning
-auto node::push_front (const int &value) ->void
+auto list::push_front (const int &value) ->void
 {
     std::shared_ptr<node> temp = std::make_shared<node>();
     temp->data = value;
@@ -58,7 +58,7 @@ auto node::push_front (const int &value) ->void
     SIZE++;
 }
 // add to specific index
-auto node::insert_at (const int &pos, const int& value) ->void
+auto list::insert_at (const int &pos, const int& value) ->void
 {
     if (head != nullptr)
     {
@@ -83,12 +83,11 @@ auto node::insert_at (const int &pos, const int& value) ->void
     }
 }
 //  delete element head
-auto node::pop_front() ->void
+auto list::pop_front() ->void
 {
     if (head != nullptr)
     {
-        std::shared_ptr<node> temp = std::make_shared<node>();
-        temp = head;
+        std::shared_ptr<node> temp = head;
         head = temp->next;
 
         temp.reset();
@@ -101,7 +100,7 @@ auto node::pop_front() ->void
     }
 }
 // delete element tail
-auto node::pop_back () ->void
+auto list::pop_back () ->void
 {
     if (head != nullptr)
     {
@@ -121,17 +120,18 @@ auto node::pop_back () ->void
     }
 }
 // checks if the list is empty
-auto node::empty() ->const bool
+auto list::empty() ->const bool
 {
     if (SIZE == 0) return true;
     else return false;
 }
 // prints list
-auto node::print () ->void
+auto list::print () ->void
 {
     if (head != nullptr)
     {
-        for (std::shared_ptr<node> it = head; it != nullptr; it = it->next)
+        std::shared_ptr<node> it;
+        for (it = head; it != nullptr; it = it->next)
         {
             std::cout << it->data << " ";
         }
@@ -141,5 +141,4 @@ auto node::print () ->void
     {
         std::cout << " list is empty!\n";
     }
-
 }
