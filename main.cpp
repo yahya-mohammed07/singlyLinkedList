@@ -18,7 +18,8 @@ auto main() -> int
         "9- delete fist element\n"
         "10- print list\n"
         "11- cehck if the list is empty\n"
-        "12- quit\n";
+        "12- empty the list\n"
+        "13- quit\n";
         //
         std::cout << "\n\nmy choise: ";
         int choise = 0;
@@ -153,8 +154,15 @@ auto main() -> int
             }
             case 12:
             {
+                std::cout << "deleting all elements...\n";
+                list.pop_all();
+                break;
+            }
+            case 13:
+            {
                 std::cout << "-quited-\n";
                 std::exit(0);
+                break;
             }
             default:
             {

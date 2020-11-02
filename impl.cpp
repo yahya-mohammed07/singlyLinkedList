@@ -117,6 +117,23 @@ auto list::pop_back () ->void
         std::cout << "\n--failed to delete! the list is empty--" << '\n';
     }
 }
+// deletes all elements
+auto list::pop_all() ->void
+{
+    if (head != nullptr)
+    {
+        std::shared_ptr<_Node> begin = head;
+        while (begin->next != nullptr)
+        {
+            begin->next.reset();
+        }
+        head.reset();
+    }
+    else
+    {
+        std::cout << "--list is empty\n";
+    }
+}
 // checks if the list is empty
 auto list::empty() ->const bool
 {

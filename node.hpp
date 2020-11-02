@@ -34,6 +34,7 @@ public:
     auto size ()->const std::uint64_t;
     auto pop_front () ->void;
     auto pop_back () ->void;
+    auto pop_all () ->void;
     auto empty() ->const bool;
 };
 #endif // __NODE_H__
