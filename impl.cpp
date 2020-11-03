@@ -1,4 +1,5 @@
 #include "node.hpp"
+#include <iostream>
 //
 static std::uint64_t SIZE = 0;
 //
@@ -128,6 +129,9 @@ auto list::pop_all() ->void
             begin->next.reset();
         }
         head.reset();
+        tail.reset();
+        //
+        SIZE = 0;
     }
     else
     {

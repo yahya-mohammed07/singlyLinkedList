@@ -2,7 +2,7 @@
 
 auto main() -> int
 {
-    list list;
+    list myList;
     //
     while (true)
     {
@@ -36,10 +36,10 @@ auto main() -> int
                 for (int i = 0, input = 0; i < limit; i++)
                 {
                     std::cin >> input;
-                    list.push_back(input);
+                    myList.push_back(input);
                 }
                 std::cout << "the list: ";
-                list.print();
+                myList.print();
                 std::cout << '\n';
                 //
                 break;
@@ -50,10 +50,10 @@ auto main() -> int
                 std::cout << "add this: ";
                 int val = 0;
                 std::cin >> val;
-                list.push_front(val);
+                myList.push_front(val);
                 //
                 std::cout << "\nthe list: ";
-                list.print();
+                myList.print();
                 std::cout << '\n';
                 //
                 break;
@@ -64,10 +64,10 @@ auto main() -> int
                 std::cout << "add this: ";
                 int val = 0;
                 std::cin >> val;
-                list.push_back(val);
+                myList.push_back(val);
                 //
                 std::cout << "\nthe list: ";
-                list.print();
+                myList.print();
                 std::cout << '\n';
                 //
                 break;
@@ -80,42 +80,58 @@ auto main() -> int
                 std::cout << "give value: ";
                 int val = 0;
                 std::cin >> val;
-                list.insert_at(pos, val);
+                myList.insert_at(pos, val);
                 //
                 std::cout << "\nthe list: ";
-                list.print();
+                myList.print();
                 std::cout << '\n';
                 //
                 break;
             }
             case 5:
             {
-                std::cout << "lastest element: ";
-                std::cout << list.back() << '\n';
+                std::cout << "checking is list empty ...\n";
+                if (!myList.empty())
+                {
+                    std::cout << "lastest element: ";
+                    std::cout << myList.back() << '\n';
+                }
+                else
+                {
+                    std::cout << "--list is empty\n";
+                }
                 //
                 break;
             }
             case 6:
             {
-                std::cout << "fist element: ";
-                std::cout << list.front() << '\n';
+                std::cout << "checking is list empty ...\n";
+                if (!myList.empty())
+                {
+                    std::cout << "first element: ";
+                    std::cout << myList.front() << '\n';
+                }
+                else
+                {
+                    std::cout << "--list is empty\n";
+                }
                 //
                 break;
             }
             case 7:
             {
                 std::cout << "size: ";
-                std::cout << list.size() << "\n\n";
+                std::cout << myList.size() << "\n\n";
                 //
                 break;
             }
             case 8:
             {
                 std::cout << "deleting last element...\n";
-                list.pop_back();
+                myList.pop_back();
                 //
                 std::cout << "\nthe list: ";
-                list.print();
+                myList.print();
                 std::cout << '\n';
                 //                
                 break;
@@ -123,10 +139,10 @@ auto main() -> int
             case 9:
             {
                 std::cout << "deleting first element...\n";
-                list.pop_front();
+                myList.pop_front();
                 //
                 std::cout << "\nthe list: ";
-                list.print();
+                myList.print();
                 std::cout << '\n';
                 //
                 break;
@@ -134,14 +150,14 @@ auto main() -> int
             case 10:
             {
                 std::cout << "\nthe list: ";
-                list.print();
+                myList.print();
                 std::cout << '\n';
                 //
                 break;
             }
             case 11:
             {
-                if (!list.empty())
+                if (!myList.empty())
                 {
                     std::cout << "--list is not empty\n";
                 }
@@ -155,7 +171,7 @@ auto main() -> int
             case 12:
             {
                 std::cout << "deleting all elements...\n";
-                list.pop_all();
+                myList.pop_all();
                 break;
             }
             case 13:
