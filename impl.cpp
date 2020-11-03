@@ -94,7 +94,7 @@ auto list::pop_front() ->void
     }
     else if (head == nullptr)
     {
-        std::cerr << "--falied to delete list is empty!--" << '\n';
+        std::cerr << "\n--falied to delete list is empty!--" << '\n';
     }
 }
 // delete element tail
