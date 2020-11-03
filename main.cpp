@@ -1,4 +1,5 @@
 #include "node.hpp"
+#include <iostream>
 
 auto main() -> int
 {
@@ -90,7 +91,7 @@ auto main() -> int
             }
             case 5:
             {
-                std::cout << "checking is list empty ...\n";
+                std::clog << "--checking is list empty ...\n";
                 if (!myList.empty())
                 {
                     std::cout << "lastest element: ";
@@ -98,14 +99,14 @@ auto main() -> int
                 }
                 else
                 {
-                    std::cout << "--list is empty\n";
+                    std::clog << "--list is empty\n";
                 }
                 //
                 break;
             }
             case 6:
             {
-                std::cout << "checking is list empty ...\n";
+                std::clog << "checking is list empty ...\n";
                 if (!myList.empty())
                 {
                     std::cout << "first element: ";
@@ -113,7 +114,7 @@ auto main() -> int
                 }
                 else
                 {
-                    std::cout << "--list is empty\n";
+                    std::clog << "--list is empty\n";
                 }
                 //
                 break;
@@ -127,7 +128,7 @@ auto main() -> int
             }
             case 8:
             {
-                std::cout << "deleting last element...\n";
+                std::clog << "deleting last element...\n";
                 myList.pop_back();
                 //
                 std::cout << "\nthe list: ";
@@ -138,7 +139,7 @@ auto main() -> int
             }
             case 9:
             {
-                std::cout << "deleting first element...\n";
+                std::clog << "deleting first element...\n";
                 myList.pop_front();
                 //
                 std::cout << "\nthe list: ";
@@ -159,18 +160,18 @@ auto main() -> int
             {
                 if (!myList.empty())
                 {
-                    std::cout << "--list is not empty\n";
+                    std::clog << "--list is not empty\n";
                 }
                 else
                 {
-                    std::cout << "--list is empty\n";   
+                    std::clog << "--list is empty\n";   
                 }
                 //
                 break;
             }
             case 12:
             {
-                std::cout << "deleting all elements...\n";
+                std::clog << "deleting all elements...\n";
                 myList.pop_all();
                 break;
             }
@@ -182,7 +183,7 @@ auto main() -> int
             }
             default:
             {
-                std::cout << "-wrong choise try again->\n\n";
+                std::cerr << "-wrong choise try again->\n\n";
                 break;
             }
         }

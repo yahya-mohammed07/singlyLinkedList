@@ -77,7 +77,7 @@ auto list::insert_at (const int &pos, const int& value) ->void
     }
     else
     {
-        std::cout << "\n-list is empty or pos is empty-\n";
+        std::cerr << "--list is empty or pos is empty-\n";
     }
 }
 //  delete element head
@@ -94,7 +94,7 @@ auto list::pop_front() ->void
     }
     else if (head == nullptr)
     {
-        std::cout << "\n--falied to delete list is empty!--" << '\n';
+        std::cerr << "--falied to delete list is empty!--" << '\n';
     }
 }
 // delete element tail
@@ -114,7 +114,7 @@ auto list::pop_back () ->void
     }
     else if (head == nullptr)
     {
-        std::cout << "\n--failed to delete! the list is empty--" << '\n';
+        std::cerr << "\n--failed to delete! the list is empty--" << '\n';
     }
 }
 // deletes all elements
@@ -134,7 +134,7 @@ auto list::pop_all() ->void
     }
     else
     {
-        std::cout << "--list is empty\n";
+        std::cerr << "--list is empty\n";
     }
 }
 // checks if the list is empty
@@ -157,6 +157,6 @@ auto list::print () ->void
     }
     else
     {
-        std::cout << " list is empty!\n";
+        std::cerr << "--list is empty!\n";
     }
 }
