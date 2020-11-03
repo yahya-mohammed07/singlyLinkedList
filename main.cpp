@@ -1,5 +1,4 @@
 #include "node.hpp"
-#include <iostream>
 
 auto main() -> int
 {
