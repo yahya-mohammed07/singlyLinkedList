@@ -1,5 +1,4 @@
 #include "node.hpp"
-#include <iostream>
 //
 static std::uint64_t SIZE = 0;
 //
