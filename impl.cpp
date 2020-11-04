@@ -8,7 +8,7 @@ list::list()
     tail = nullptr;
 }
 // add values
-auto list::push_back (const int &value) ->void
+auto list::push_back(const int &value) ->void
 {
     std::shared_ptr<_Node> temp = std::make_shared<_Node>();
     temp->data = value;
@@ -28,24 +28,24 @@ auto list::push_back (const int &value) ->void
     SIZE++;
 }
 // return const size
-auto list::size ()  ->const std::uint64_t
+auto list::size()  ->const std::uint64_t
 {
     return SIZE;
 }
 // return last value
-auto list::back () ->int
+auto list::back() ->int
 {
     std::shared_ptr<_Node> last = tail;
     return last->data;
 }
 // return first value
-auto list::front () ->int
+auto list::front() ->int
 {
     std::shared_ptr<_Node> first = head;
     return first->data;
 }
 // add value at the beginning
-auto list::push_front (const int &value) ->void
+auto list::push_front(const int &value) ->void
 {
     std::shared_ptr<_Node> temp = std::make_shared<_Node>();
     temp->data = value;
@@ -56,7 +56,7 @@ auto list::push_front (const int &value) ->void
     SIZE++;
 }
 // add to specific index
-auto list::insert_at (const int &pos, const int& value) ->void
+auto list::insert_at(const int &pos, const int& value) ->void
 {
     if (head != nullptr)
     {
@@ -98,7 +98,7 @@ auto list::pop_front() ->void
     }
 }
 // delete element tail
-auto list::pop_back () ->void
+auto list::pop_back() ->void
 {
     if (head != nullptr)
     {
@@ -148,7 +148,7 @@ auto list::empty() ->const bool
     else return false;
 }
 // prints list
-auto list::print () ->void
+auto list::print() ->void
 {
     if (head != nullptr)
     {
