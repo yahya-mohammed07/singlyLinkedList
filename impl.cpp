@@ -123,9 +123,13 @@ auto list::pop_all() ->void
     if (head != nullptr)
     {
         std::shared_ptr<_Node> begin = head;
+        std::shared_ptr<_Node> ahead;
+
         while (begin->next != nullptr)
         {
-            begin->next.reset();
+            ahead = begin->next;
+            begin.reset();
+            begin = ahead;
         }
         head.reset();
         tail.reset();
