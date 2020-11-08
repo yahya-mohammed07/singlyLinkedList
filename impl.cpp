@@ -28,7 +28,7 @@ auto list::push_back(const int &value) ->void
     SIZE++;
 }
 // return const size
-auto list::size()  ->const std::uint64_t
+auto list::size()  ->const long long
 {
     return SIZE;
 }
@@ -64,7 +64,7 @@ auto list::insert_at(const int &pos, const int& value) ->void
         std::shared_ptr<_Node> curr = head;
         std::shared_ptr<_Node> temp = std::make_shared<_Node>();
         //
-        for (int i = 0; i < pos; i++)
+        for (long i = 0; i < pos; i++)
         {
             prev = curr;
             curr = curr->next;

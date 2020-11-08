@@ -8,7 +8,7 @@
 class _Node
 {
 public:
-    std::uint64_t data = 0;
+    long long data = 0;
     // has the refrence of the next element
     std::shared_ptr<_Node> next = nullptr;
 };
@@ -31,7 +31,7 @@ public:
     auto push_front(const int &value) ->void;
     auto insert_at(const int &pos, const int& value) ->void;
     auto print()->void;
-    auto size()->const std::uint64_t;
+    auto size()->const long long;
     auto pop_front() ->void;
     auto pop_back() ->void;
     auto pop_all() ->void;
