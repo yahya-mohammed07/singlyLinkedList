@@ -1,6 +1,6 @@
 #include "node.hpp"
 //
-static std::uint64_t SIZE = 0;
+static long long SIZE = 0;
 //
 list::list()
 {
