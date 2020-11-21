@@ -35,14 +35,12 @@ auto list::size()  ->const long long
 // return last value
 auto list::back() ->int
 {
-    std::shared_ptr<_Node> last = tail;
-    return last->data;
+    return tail->data;
 }
 // return first value
 auto list::front() ->int
 {
-    std::shared_ptr<_Node> first = head;
-    return first->data;
+    return head->data;
 }
 // add value at the beginning
 auto list::push_front(const int &value) ->void
@@ -77,7 +75,7 @@ auto list::insert_at(const int &pos, const int& value) ->void
     }
     else
     {
-        std::cerr << "--list is empty or pos is empty-\n";
+        std::clog << "--list is empty...-\n";
     }
 }
 //  delete element head
@@ -92,9 +90,9 @@ auto list::pop_front() ->void
         //
         SIZE--;
     }
-    else if (head == nullptr)
+    else
     {
-        std::cerr << "\n--falied to delete list is empty!--" << '\n';
+        std::cerr << "\n--Falied to delete list is empty!--" << '\n';
     }
 }
 // delete element tail
@@ -114,7 +112,7 @@ auto list::pop_back() ->void
     }
     else if (head == nullptr)
     {
-        std::cerr << "\n--failed to delete! the list is empty--" << '\n';
+        std::cerr << "\n--Failed to delete! the list is empty--" << '\n';
     }
 }
 // deletes all elements
@@ -138,7 +136,7 @@ auto list::pop_all() ->void
     }
     else
     {
-        std::cerr << "--list is empty\n";
+        std::clog << "--list is empty\n";
     }
 }
 // checks if the list is empty
@@ -161,6 +159,6 @@ auto list::print() ->void
     }
     else
     {
-        std::cerr << "--list is empty!\n";
+        std::clog << "--list is empty!\n";
     }
 }

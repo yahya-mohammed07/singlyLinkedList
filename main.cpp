@@ -176,7 +176,7 @@ auto main() -> int
             }
             case 13:
             {
-                std::cout << "-quited-\n";
+                std::clog << "-quited-\n";
                 std::exit(0);
                 break;
             }
