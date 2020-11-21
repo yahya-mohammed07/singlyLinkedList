@@ -1,11 +1,10 @@
 #include "node.hpp"
 //
-static long long SIZE = 0;
-//
 list::list()
 {
     head = nullptr;
     tail = nullptr;
+    SIZE = 0;
 }
 // add values
 auto list::push_back(const int &value) ->void

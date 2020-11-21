@@ -19,6 +19,8 @@ private:
     std::shared_ptr<_Node> head;
     // last element in the list
     std::shared_ptr<_Node> tail;
+    // to store the size of the list
+    long long SIZE;
     //
 public:
     // constructor
