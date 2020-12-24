@@ -178,12 +178,10 @@ auto main() -> int
             {
                 std::clog << "-quited-\n";
                 std::exit(0);
-                break;
             }
             default:
             {
                 std::cerr << "-wrong choise try again->\n\n";
-                break;
             }
         }
     }    

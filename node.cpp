@@ -1,9 +1,8 @@
 #include "node.hpp"
 //
 list::list()
+ : head(nullptr), tail(nullptr)
 {
-    head = nullptr;
-    tail = nullptr;
     SIZE = 0;
 }
 // add values
@@ -13,7 +12,7 @@ auto list::push_back(const int &value) ->void
     temp->data = value;
     temp->next = nullptr;
     //
-    if (head == nullptr)
+    if (head)
     {
         head = temp;
         tail = temp;
@@ -109,7 +108,7 @@ auto list::pop_back() ->void
         //
         SIZE--;
     }
-    else if (head == nullptr)
+    else if (head)
     {
         std::cerr << "\n--Failed to delete! the list is empty--" << '\n';
     }
