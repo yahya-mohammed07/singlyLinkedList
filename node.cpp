@@ -26,9 +26,9 @@ auto list::push_back(const int &value) ->void
     ++SIZE;
 }
 // return const size
-auto list::size() ->size_t
+auto list::size()->size_t
 {
-    return this->SIZE;
+    return SIZE;
 }
 // return last value
 auto list::back()->int
