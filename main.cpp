@@ -1,4 +1,4 @@
-#include "node.hpp"
+#include "include/node.hpp"
 
 auto main() -> int
 {
@@ -6,7 +6,7 @@ auto main() -> int
     //
     while (true)
     {
-        std::cout << 
+        std::cout <<
         "\n1- create node(s): \n"
         "2- add node to front\n"
         "3- add node to back\n"
@@ -25,15 +25,15 @@ auto main() -> int
         int choise = 0;
         std::cin >> choise;
         //
-        switch (choise) 
+        switch (choise)
         {
             case 1:
             {
                 std::cout << "\nhow many node u wanna add?: ";
-                int limit = 0;
+                int limit{};
                 std::cin >> limit;
                 std::cout << "add nodes: ";
-                for (int i = 0, input = 0; i < limit; i++)
+                for (int i = 0, input {}; i < limit; ++i)
                 {
                     std::cin >> input;
                     myList.push_back(input);
@@ -91,7 +91,7 @@ auto main() -> int
             case 5:
             {
                 std::clog << "--checking is list empty ...\n";
-                if (!myList.empty())
+                if (!myList.is_empty())
                 {
                     std::cout << "lastest element: ";
                     std::cout << myList.back() << '\n';
@@ -106,7 +106,7 @@ auto main() -> int
             case 6:
             {
                 std::clog << "checking is list empty ...\n";
-                if (!myList.empty())
+                if (!myList.is_empty())
                 {
                     std::cout << "first element: ";
                     std::cout << myList.front() << '\n';
@@ -133,7 +133,7 @@ auto main() -> int
                 std::cout << "\nthe list: ";
                 myList.print();
                 std::cout << '\n';
-                //                
+                //
                 break;
             }
             case 9:
@@ -157,13 +157,13 @@ auto main() -> int
             }
             case 11:
             {
-                if (!myList.empty())
+                if (!myList.is_empty())
                 {
                     std::clog << "--list is not empty\n";
                 }
                 else
                 {
-                    std::clog << "--list is empty\n";   
+                    std::clog << "--list is empty\n";
                 }
                 //
                 break;
@@ -184,5 +184,5 @@ auto main() -> int
                 std::cerr << "-wrong choise try again->\n\n";
             }
         }
-    }    
+    }
 }

@@ -1,9 +1,9 @@
-#include "node.hpp"
+#include "include/node.hpp"
 //
 list::list()
  : head(nullptr), tail(nullptr)
 {
-    SIZE = 0;
+    SIZE = {0};
 }
 // add values
 auto list::push_back(const int &value) ->void
@@ -12,36 +12,36 @@ auto list::push_back(const int &value) ->void
     temp->data = value;
     temp->next = nullptr;
     //
-    if (head)
+    if (head == nullptr)
     {
         head = temp;
         tail = temp;
     }
-    else 
+    else
     {
         tail->next = temp;
         tail = temp;
     }
     //
-    SIZE++;
+    ++SIZE;
 }
 // return const size
-auto list::size()  ->const long long
+auto list::size() ->size_t
 {
-    return SIZE;
+    return this->SIZE;
 }
 // return last value
-auto list::back() ->int
+auto list::back()->int
 {
     return tail->data;
 }
 // return first value
-auto list::front() ->int
+auto list::front()->int
 {
     return head->data;
 }
 // add value at the beginning
-auto list::push_front(const int &value) ->void
+auto list::push_front(const int &value)->void
 {
     std::shared_ptr<_Node> temp = std::make_shared<_Node>();
     temp->data = value;
@@ -49,10 +49,10 @@ auto list::push_front(const int &value) ->void
 
     head = temp;
     //
-    SIZE++;
+    ++SIZE;
 }
 // add to specific index
-auto list::insert_at(const int &pos, const int& value) ->void
+auto list::insert_at(const int &pos, const int& value)->void
 {
     if (head != nullptr)
     {
@@ -69,7 +69,7 @@ auto list::insert_at(const int &pos, const int& value) ->void
         prev->next = temp;
         temp->next = curr;
         //
-        SIZE++;
+        ++SIZE;
     }
     else
     {
@@ -77,7 +77,7 @@ auto list::insert_at(const int &pos, const int& value) ->void
     }
 }
 //  delete element head
-auto list::pop_front() ->void
+auto list::pop_front()->void
 {
     if (head != nullptr)
     {
@@ -86,7 +86,7 @@ auto list::pop_front() ->void
 
         temp.reset();
         //
-        SIZE--;
+        --SIZE;
     }
     else
     {
@@ -94,7 +94,7 @@ auto list::pop_front() ->void
     }
 }
 // delete element tail
-auto list::pop_back() ->void
+auto list::pop_back()->void
 {
     if (head != nullptr)
     {
@@ -106,15 +106,15 @@ auto list::pop_back() ->void
         }
         tail->next = nullptr;
         //
-        SIZE--;
+        --SIZE;
     }
-    else if (head)
+    else
     {
         std::cerr << "\n--Failed to delete! the list is empty--" << '\n';
     }
 }
 // deletes all elements
-auto list::pop_all() ->void
+auto list::pop_all()->void
 {
     if (head != nullptr)
     {
@@ -138,13 +138,12 @@ auto list::pop_all() ->void
     }
 }
 // checks if the list is empty
-auto list::empty() ->const bool
+auto list::is_empty()->bool
 {
-    if (SIZE == 0) return true;
-    else return false;
+    return SIZE == 0 ? true : false;
 }
 // prints list
-auto list::print() ->void
+auto list::print()->void
 {
     if (head != nullptr)
     {
