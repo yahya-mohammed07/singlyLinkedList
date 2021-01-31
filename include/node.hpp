@@ -27,8 +27,8 @@ public:
     list();
     // methods
     auto push_back(const int &value)->void;
-    auto back()->int;
-    auto front()->int;
+    auto back()->long long;
+    auto front()->long long;
     auto push_front(const int &value)->void;
     auto insert_at(const int &pos, const int& value)->void;
     auto print()->void;
@@ -37,5 +37,6 @@ public:
     auto pop_back()->void;
     auto pop_all()->void;
     auto is_empty()->bool;
+    auto at(const int pos)->int64_t;
 };
 #endif // INCLUDE_NODE_HPP_
